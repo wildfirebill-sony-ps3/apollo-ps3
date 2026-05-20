@@ -131,11 +131,14 @@ static int convert_to_utf16(const char* utf8, uint16_t* utf16, uint32_t availabl
             code = ch & 15;
             extra = 2;
         }
-        else
+        else if ((ch & 0xf8) == 0xf0)
         {
-            // TODO: this assumes there won't be invalid utf8 codepoints
             code = ch & 7;
             extra = 3;
+        }
+        else
+        {
+            return -1;
         }
 
         for (uint32_t i=0; i<extra; i++)

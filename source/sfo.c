@@ -134,12 +134,14 @@ int sfo_read(sfo_context_t *context, const char *file_path) {
 			if (param->value) {
 				memcpy(param->value, (u8 *)(sfo + header->data_table_offset + index_table->data_offset), param->actual_length);
 			} else {
-				/* TODO */
-				assert(0);
+				free(param->key);
+				free(param);
+				ret = -1;
+				goto error;
 			}
 		} else {
-			/* TODO */
-			assert(0);
+			ret = -1;
+			goto error;
 		}
 
 		list_append(context->params, param);
