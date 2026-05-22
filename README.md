@@ -1,4 +1,5 @@
 # Apollo Save Tool (PS3)
+Modified by [wildfirebill](https://github.com/wildfirebill)
 
 [![Downloads][img_downloads]][app_downloads] [![Release][img_latest]][app_latest] [![License][img_license]][app_license]
 [![Build package](https://github.com/bucanero/apollo-ps3/actions/workflows/build.yml/badge.svg)](https://github.com/bucanero/apollo-ps3/actions/workflows/build.yml)
